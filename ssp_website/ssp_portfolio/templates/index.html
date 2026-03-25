@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2 class="hero-title">Welcome to SSP Portfolio</h2>
+    <p class="hero-subtitle">Modern couture with timeless detailing.</p>
+    <a class="btn btn-accent" href="/collections/">Explore Collections</a>
+</section>
+{% endblock %}

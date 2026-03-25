@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSP</title>
+
+    <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    {% block page_css %}{% endblock %}
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand-mark">
+            <h1>SSP</h1>
+        </div>
+        {% include 'navbar.html' %}
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-meta">&copy; 2026 SSP. All rights reserved.</p>
+    </footer>
+</body>
+</html>
