@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+  "buildCommand": "pip install -r requirements.txt",
   "env": {
     "DEBUG": "False",
     "ALLOWED_HOSTS": "sai-shritha-pamula-courture-portfol.vercel.app,.vercel.app"
