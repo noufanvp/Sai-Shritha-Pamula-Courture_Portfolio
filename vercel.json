@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+  "outputDirectory": "ssp_website",
+  "env": {
+    "DEBUG": "False",
+    "SECRET_KEY": "@ssp_secret_key_vercel"
+  }
+}
