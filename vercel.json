@@ -3,16 +3,5 @@
   "env": {
     "DEBUG": "False",
     "ALLOWED_HOSTS": "*.vercel.app"
-  },
-  "functions": {
-    "ssp_website/wsgi.py": {
-      "runtime": "python3.9"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "ssp_website/wsgi.py"
-    }
-  ]
+  }
 }
