@@ -1,17 +1,7 @@
 {
-  "buildCommand": "pip install -r requirements.txt && cp -r static/* public/static/ 2>/dev/null || true",
+  "buildCommand": "mkdir -p public/static && cp -r static/* public/static/ 2>/dev/null || true",
   "env": {
     "DEBUG": "False",
     "ALLOWED_HOSTS": "sai-shritha-pamula-courture-portfol.vercel.app,.vercel.app"
-  },
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/public/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.py"
-    }
-  ]
+  }
 }
