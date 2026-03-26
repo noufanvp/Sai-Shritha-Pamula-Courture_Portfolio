@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════
+   SSP COUTURE — Layout
+   Header, Navigation, Main, Footer
+   ═══════════════════════════════════════════════════ */
+
+/* ── Header ── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--header-text);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: background var(--duration-fast) ease,
+              padding var(--duration-fast) ease;
+}
+
+.site-header.scrolled {
+  padding: 0.8rem 2.5rem;
+  background: rgba(6, 13, 26, 0.95);
+}
+
+.brand-mark h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
+
+/* ── Navigation ── */
+.site-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.site-nav__link {
+  color: var(--cream-muted);
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: color var(--duration-fast) var(--ease-out-quart),
+              border-color var(--duration-fast) var(--ease-out-quart);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  color: var(--gold-400);
+  border-color: var(--gold-500);
+  outline: none;
+}
+
+/* ── Main Content ── */
+.main-content {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--cream-muted);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-xl) 2.5rem var(--space-lg);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: var(--space-lg);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-brand__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin: 0;
+}
+
+.footer-brand__tagline {
+  font-size: 0.8rem;
+  color: var(--cream-muted);
+  font-style: italic;
+  margin: 0;
+  max-width: 28ch;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 80px;
+  background: var(--color-border-strong);
+  align-self: center;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: right;
+}
+
+.footer-nav a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  transition: color var(--duration-fast) var(--ease-out-quart);
+}
+
+.footer-nav a:hover {
+  color: var(--gold-400);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: var(--space-lg) auto 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-meta {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--blue-400);
+}
+
+.footer-credit {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--blue-500);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1rem 1.2rem;
+  }
+
+  .site-header.scrolled {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .brand-mark h1 {
+    font-size: 1.1rem;
+  }
+
+  .site-nav__list {
+    gap: 1.5rem;
+  }
+
+  .site-nav__link {
+    font-size: 0.65rem;
+  }
+
+  .site-footer {
+    padding: var(--space-lg) 1.2rem var(--space-md);
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-brand__tagline {
+    max-width: none;
+  }
+
+  .footer-nav {
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer-divider {
+    width: 60px;
+    height: 1px;
+    justify-self: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .site-nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
