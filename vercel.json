@@ -1,6 +1,18 @@
 {
   "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
   "env": {
-    "DEBUG": "False"
-  }
+    "DEBUG": "False",
+    "ALLOWED_HOSTS": "*.vercel.app"
+  },
+  "functions": {
+    "ssp_website/wsgi.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "ssp_website/wsgi.py"
+    }
+  ]
 }
