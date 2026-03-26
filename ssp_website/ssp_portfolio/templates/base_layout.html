@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSP</title>
+    <title>{% block title %}Sai Shritha Pamula Couture{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Sai Shritha Pamula Couture — where every stitch tells a story. Thoughtful, expressive, and poetic fashion design.{% endblock %}">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
@@ -13,7 +20,7 @@
     {% block page_css %}{% endblock %}
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <div class="brand-mark">
             <h1>SSP</h1>
         </div>
@@ -25,7 +32,25 @@
     </main>
 
     <footer class="site-footer">
-        <p class="footer-meta">&copy; 2026 SSP. All rights reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p class="footer-brand__name">Sai Shritha Pamula</p>
+                <p class="footer-brand__tagline">Where every piece belongs to a story, not just a collection.</p>
+            </div>
+            <div class="footer-divider"></div>
+            <nav class="footer-nav">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'designs' %}">Designs</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-meta">&copy; 2026 Sai Shritha Pamula Couture</p>
+            <p class="footer-credit">Crafted with intention</p>
+        </div>
     </footer>
+
+    {% block page_js %}{% endblock %}
 </body>
 </html>

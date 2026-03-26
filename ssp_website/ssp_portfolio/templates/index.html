@@ -1,14 +1,199 @@
 {% extends 'base_layout.html' %}
 {% load static %}
 
+{% block title %}Sai Shritha Pamula Couture — Where Every Stitch Tells a Story{% endblock %}
+
 {% block page_css %}
 <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
 {% endblock %}
 
 {% block content %}
-<section class="hero">
-    <h2 class="hero-title">Welcome to SSP Portfolio</h2>
-    <p class="hero-subtitle">Modern couture with timeless detailing.</p>
-    <a class="btn btn-accent" href="/collections/">Explore Collections</a>
+
+<!-- ╔═══════════════════════════════════════╗
+     ║  SECTION 01 — HERO                   ║
+     ╚═══════════════════════════════════════╝ -->
+<section class="hero" id="hero">
+    <div class="hero__bg" id="hero-parallax">
+        <img src="{% static 'images/hero_bg.png' %}" alt="Intricate gold zardozi embroidery on navy velvet" class="hero__bg-image">
+        <div class="hero__bg-overlay"></div>
+        <div class="hero__bg-grain"></div>
+    </div>
+    <div class="hero__content">
+        <span class="section-number cin-reveal" data-delay="0">[ 001 ]</span>
+        <h2 class="hero__title cin-reveal" data-delay="200">
+            <span class="line"><span class="line-inner">Where every stitch</span></span>
+            <span class="line"><span class="line-inner">tells a <em>story</em></span></span>
+        </h2>
+        <hr class="divider cin-reveal" data-delay="500">
+        <p class="hero__subtitle cin-reveal" data-delay="600">
+            Thoughtful, expressive, and a little bit poetic — each piece feels like it belongs to a story, not just a collection.
+        </p>
+        <a class="btn btn-accent cin-reveal" data-delay="800" href="{% url 'designs' %}">Explore Designs</a>
+    </div>
 </section>
+
+<!-- ╔═══════════════════════════════════════╗
+     ║  SECTION 02 — FEATURED DESIGNS       ║
+     ╚═══════════════════════════════════════╝ -->
+<section class="featured" id="featured-designs">
+    <div class="featured__header">
+        <span class="section-number cin-reveal">[ 002 ]</span>
+        <span class="section-label cin-reveal" data-delay="100">Featured Designs</span>
+        <h2 class="featured__title cin-reveal" data-delay="200">
+            <span class="line"><span class="line-inner">Pieces that carry</span></span>
+            <span class="line"><span class="line-inner">a <em>mood</em> & <em>intention</em></span></span>
+        </h2>
+    </div>
+
+    <div class="featured__grid">
+        <!-- Design 01 -->
+        <article class="design-card cin-reveal" id="design-card-01">
+            <div class="design-card__image-wrap">
+                <img src="{% static 'images/design_01.png' %}" alt="The First Chapter - Navy lehenga with gold zardozi embroidery" class="design-card__image" loading="lazy">
+                <div class="design-card__image-overlay"></div>
+                <span class="design-card__number-overlay">01</span>
+            </div>
+            <div class="design-card__info">
+                <span class="design-card__number">[ 01 ]</span>
+                <h3 class="design-card__name">The First Chapter</h3>
+                <p class="design-card__mood">A piece born from reimagining — the lehenga that started it all.</p>
+            </div>
+        </article>
+
+        <!-- Design 02 -->
+        <article class="design-card cin-reveal" data-delay="200" id="design-card-02">
+            <div class="design-card__image-wrap">
+                <img src="{% static 'images/design_02.png' %}" alt="Golden Thread - Close-up of gold beadwork and embroidery" class="design-card__image" loading="lazy">
+                <div class="design-card__image-overlay"></div>
+                <span class="design-card__number-overlay">02</span>
+            </div>
+            <div class="design-card__info">
+                <span class="design-card__number">[ 02 ]</span>
+                <h3 class="design-card__name">Golden Thread</h3>
+                <p class="design-card__mood">Where craftsmanship meets emotion, woven into every detail.</p>
+            </div>
+        </article>
+
+        <!-- Design 03 -->
+        <article class="design-card cin-reveal" data-delay="400" id="design-card-03">
+            <div class="design-card__image-wrap">
+                <img src="{% static 'images/design_03.png' %}" alt="Silent Poetry - Flowing navy silk with gold border" class="design-card__image" loading="lazy">
+                <div class="design-card__image-overlay"></div>
+                <span class="design-card__number-overlay">03</span>
+            </div>
+            <div class="design-card__info">
+                <span class="design-card__number">[ 03 ]</span>
+                <h3 class="design-card__name">Silent Poetry</h3>
+                <p class="design-card__mood">An ode to the silhouettes that speak without words.</p>
+            </div>
+        </article>
+    </div>
+
+    <div class="featured__cta cin-reveal">
+        <a class="btn btn-accent" href="{% url 'designs' %}">View All Designs</a>
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════╗
+     ║  SECTION 03 — FOUNDER NOTE           ║
+     ╚═══════════════════════════════════════╝ -->
+<section class="founder" id="founder-note">
+    <div class="founder__wrapper">
+        <span class="section-number cin-reveal">[ 003 ]</span>
+        <span class="section-label cin-reveal" data-delay="100">The Founder's Note</span>
+        <div class="founder__content">
+            <div class="founder__quote-block corner-frame cin-reveal" data-delay="200">
+                <blockquote class="founder__quote">
+                    <p class="char-reveal">"I didn't start this as a brand idea. It began with a <em>lehenga</em> that didn't turn out the way I imagined."</p>
+                </blockquote>
+            </div>
+            <div class="founder__story cin-reveal" data-delay="400">
+                <p>Instead of settling, I decided to take things into my own hands and recreate it the way I truly wanted. That process made me realize how much I care about <strong>details, storytelling</strong>, and how a piece <em>feels</em> — not just how it looks.</p>
+                <hr class="divider">
+                <p>What I'm building now is not just about clothes — it's about creating pieces that have a story, a mood, and <strong>intention behind every detail</strong>.</p>
+                <div class="full-story__cta cin-reveal">
+                    <a class="btn btn-accent" href="{% url 'about' %}">Read My Full Story</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════╗
+     ║  SECTION 04 — HOW TO ORDER           ║
+     ╚═══════════════════════════════════════╝ -->
+<section class="how-to-order" id="how-to-order">
+    <div class="how-to-order__wrapper">
+        <span class="section-number cin-reveal">[ 004 ]</span>
+        <span class="section-label cin-reveal" data-delay="100">How to Order</span>
+        <h2 class="how-to-order__title cin-reveal" data-delay="200">
+            <span class="line"><span class="line-inner">Your vision,</span></span>
+            <span class="line"><span class="line-inner">brought to <em>life</em></span></span>
+        </h2>
+
+        <div class="how-to-order__steps">
+            <!-- Step 01 -->
+            <div class="order-step cin-reveal" data-delay="100" id="order-step-01">
+                <span class="order-step__number">01</span>
+                <div class="order-step__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="order-step__title">Share Your Vision</h3>
+                <p class="order-step__desc">Tell me about your dream piece — the mood, the occasion, the feeling you want to carry.</p>
+            </div>
+
+            <!-- Connector -->
+            <div class="order-step__connector cin-reveal" data-delay="200">
+                <svg width="60" height="2" viewBox="0 0 60 2">
+                    <line x1="0" y1="1" x2="60" y2="1" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" />
+                </svg>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="order-step cin-reveal" data-delay="300" id="order-step-02">
+                <span class="order-step__number">02</span>
+                <div class="order-step__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                        <path d="M2 2l7.586 7.586"></path>
+                        <circle cx="11" cy="11" r="2"></circle>
+                    </svg>
+                </div>
+                <h3 class="order-step__title">We Design Together</h3>
+                <p class="order-step__desc">From fabric selection to silhouette sketches, every decision is a conversation.</p>
+            </div>
+
+            <!-- Connector -->
+            <div class="order-step__connector cin-reveal" data-delay="400">
+                <svg width="60" height="2" viewBox="0 0 60 2">
+                    <line x1="0" y1="1" x2="60" y2="1" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" />
+                </svg>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="order-step cin-reveal" data-delay="500" id="order-step-03">
+                <span class="order-step__number">03</span>
+                <div class="order-step__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h3 class="order-step__title">Your Piece Comes Alive</h3>
+                <p class="order-step__desc">A garment crafted with care, carrying the story we built together.</p>
+            </div>
+        </div>
+
+        <div class="how-to-order__cta cin-reveal">
+            <a class="btn btn-accent" href="{% url 'contact' %}">Start a Conversation</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

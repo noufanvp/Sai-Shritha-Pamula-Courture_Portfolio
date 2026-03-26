@@ -1,36 +1,79 @@
+/* ═══════════════════════════════════════════════════
+   SSP COUTURE — Design Tokens
+   Sai Shritha Pamula Couture
+   Gold & Blue editorial palette
+   ═══════════════════════════════════════════════════ */
+
 :root {
-  --blue-950: #0a1426;
-  --blue-900: #0f223d;
-  --blue-800: #163258;
-  --blue-700: #1f4678;
-  --blue-500: #3d78bf;
+  /* ── Blue Scale (deep midnight to light) ── */
+  --blue-950: #060d1a;
+  --blue-900: #0a1628;
+  --blue-850: #0e1f38;
+  --blue-800: #132a4a;
+  --blue-700: #1b3a66;
+  --blue-600: #245090;
+  --blue-500: #3672bf;
+  --blue-400: #5a94d6;
+  --blue-300: #8db8e8;
+  --blue-200: #bdd5f2;
   --blue-100: #dce9f8;
-  --blue-50: #f4f8fd;
+  --blue-50:  #f0f5fc;
 
-  --gold-900: #6a4c17;
-  --gold-800: #87601f;
-  --gold-700: #a6782b;
-  --gold-600: #bf9037;
-  --gold-500: #d4a949;
-  --gold-200: #f2e3be;
-  --gold-100: #faf4e6;
+  /* ── Gold Scale (rich burnished) ── */
+  --gold-900: #5c3d0d;
+  --gold-800: #7a5214;
+  --gold-700: #9a6a1f;
+  --gold-600: #b8842e;
+  --gold-500: #c9a96e;
+  --gold-400: #d4b87e;
+  --gold-300: #e0cb9e;
+  --gold-200: #ecdcbe;
+  --gold-100: #f7eeda;
+  --gold-50:  #fdf8f0;
 
-  --slate-900: #1a202c;
-  --slate-500: #6b7585;
-  --slate-300: #cbd2dc;
+  /* ── Neutrals ── */
+  --cream: #f5efe6;
+  --cream-muted: #d8d2c8;
+  --charcoal: #1a1a2e;
   --white: #ffffff;
 
-  --color-bg: var(--blue-50);
-  --color-surface: var(--white);
-  --color-text: var(--slate-900);
-  --color-text-muted: var(--slate-500);
-  --color-border: var(--slate-300);
+  /* ── Semantic Colors ── */
+  --color-bg: var(--blue-950);
+  --color-surface: var(--blue-900);
+  --color-surface-elevated: var(--blue-850);
+  --color-text: var(--cream);
+  --color-text-muted: var(--cream-muted);
+  --color-text-accent: var(--gold-400);
+  --color-border: rgba(201, 169, 110, 0.15);
+  --color-border-strong: rgba(201, 169, 110, 0.35);
 
-  --color-primary: var(--blue-800);
-  --color-primary-hover: var(--blue-700);
+  --color-primary: var(--blue-600);
+  --color-primary-hover: var(--blue-500);
   --color-accent: var(--gold-500);
-  --color-accent-hover: var(--gold-600);
+  --color-accent-hover: var(--gold-400);
+  --color-accent-glow: rgba(201, 169, 110, 0.2);
 
-  --header-bg: var(--blue-900);
-  --header-text: #f7f9fc;
+  --header-bg: rgba(6, 13, 26, 0.85);
+  --header-text: var(--cream);
+  --footer-bg: var(--blue-950);
+
+  /* ── Typography ── */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Spacing Scale ── */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 10rem;
+
+  /* ── Animation ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-reveal: 1s;
+  --duration-fast: 0.3s;
+  --duration-medium: 0.6s;
 }

@@ -1,17 +1,158 @@
+/* ═══════════════════════════════════════════════════
+   SSP COUTURE — Components
+   Buttons, badges, reveal animations, decorative elements
+   ═══════════════════════════════════════════════════ */
+
+/* ── Buttons ── */
 .btn {
-    display: inline-block;
-    padding: 0.7rem 1.1rem;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    font-weight: 600;
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 0;
+  border: 1px solid var(--color-border-strong);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out-quart);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-accent {
-    background: var(--color-accent);
-    color: var(--blue-950);
-    border-color: var(--gold-600);
+  background: transparent;
+  color: var(--gold-400);
+  border-color: var(--gold-500);
+}
+
+.btn-accent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-medium) var(--ease-out-expo);
+  z-index: -1;
 }
 
 .btn-accent:hover {
-    background: var(--color-accent-hover);
+  color: var(--blue-950);
+  border-color: var(--gold-400);
+}
+
+.btn-accent:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Section Number Badge ── */
+.section-number {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-500);
+  opacity: 0.7;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+/* ── Section Label ── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+}
+
+.section-label::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--gold-500);
+}
+
+/* ── Divider Line ── */
+.divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-500), transparent);
+  border: none;
+  margin: var(--space-md) 0;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--duration-reveal) var(--ease-out-expo),
+              transform var(--duration-reveal) var(--ease-out-expo);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ── Text Reveal (word-by-word) ── */
+.text-reveal .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out-expo),
+              transform 0.6s var(--ease-out-expo);
+}
+
+.text-reveal.reveal--visible .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Decorative Corner Brackets ── */
+.corner-frame {
+  position: relative;
+  padding: var(--space-md);
+}
+
+.corner-frame::before,
+.corner-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--gold-500);
+  border-style: solid;
+  opacity: 0.4;
+}
+
+.corner-frame::before {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.corner-frame::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+/* ── Gold Accent Text ── */
+.text-gold {
+  color: var(--gold-400);
+}
+
+.text-italic {
+  font-style: italic;
 }
