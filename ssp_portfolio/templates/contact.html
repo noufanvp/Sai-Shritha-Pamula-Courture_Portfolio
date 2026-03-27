@@ -1,8 +1,92 @@
 {% extends 'base_layout.html' %}
+{% load static %}
+
+{% block title %}Contact — Sai Shritha Pamula Couture{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/pages/contact.css' %}">
+{% endblock %}
 
 {% block content %}
-<section class="contact">
-    <h2 class="contact-title">Contact Us</h2>
-    <p class="contact-description">Get in touch with our team.</p>
+<section class="contact-page">
+    <div class="contact-page__bg-shape contact-page__bg-shape--one"></div>
+    <div class="contact-page__bg-shape contact-page__bg-shape--two"></div>
+
+    <div class="contact-page__inner">
+        <header class="contact-hero">
+            <span class="section-number">[ 005 ]</span>
+            <span class="section-label">Contact</span>
+            <h2 class="contact-hero__title">Let's create a piece that feels uniquely yours.</h2>
+            <p class="contact-hero__subtitle">
+                Share your vision, occasion, and design preferences. I will get back to you to continue the conversation.
+            </p>
+        </header>
+
+        {% if messages %}
+        <div class="contact-feedback" aria-live="polite">
+            {% for message in messages %}
+                <p class="contact-feedback__item contact-feedback__item--{{ message.tags|default:'info' }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="contact-grid">
+            <aside class="contact-card">
+                <h3 class="contact-card__title">Studio Details</h3>
+                <p class="contact-card__copy">I currently work on custom and occasion-wear designs with a story-led approach.</p>
+
+                <dl class="contact-list">
+                    <div class="contact-list__item">
+                        <dt>Email</dt>
+                        <dd><a href="mailto:hello@sspcouture.com">hello@sspcouture.com</a></dd>
+                    </div>
+                    <div class="contact-list__item">
+                        <dt>Response Time</dt>
+                        <dd>Within 24-48 hours</dd>
+                    </div>
+                    <div class="contact-list__item">
+                        <dt>Best For</dt>
+                        <dd>Bridal, festive, and custom couture</dd>
+                    </div>
+                </dl>
+            </aside>
+
+            <form class="contact-form" method="post" novalidate>
+                {% csrf_token %}
+
+                <div class="contact-form__row">
+                    <label for="full_name">Full Name <span>*</span></label>
+                    <input id="full_name" name="full_name" type="text" required value="{{ form_data.full_name }}" placeholder="Your full name">
+                </div>
+
+                <div class="contact-form__row contact-form__row--split">
+                    <div>
+                        <label for="email">Email <span>*</span></label>
+                        <input id="email" name="email" type="email" required value="{{ form_data.email }}" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" value="{{ form_data.phone }}" placeholder="Optional">
+                    </div>
+                </div>
+
+                <div class="contact-form__row">
+                    <label for="subject">Subject</label>
+                    <input id="subject" name="subject" type="text" value="{{ form_data.subject }}" placeholder="Occasion or design request">
+                </div>
+
+                <div class="contact-form__row">
+                    <label for="message">Message <span>*</span></label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell me what you are looking for, event dates, and preferences.">{{ form_data.message }}</textarea>
+                </div>
+
+                <div class="contact-sent-msg__cta cin-reveal">
+                    <button class="btn btn-accent" type="submit">Send Message</button>
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
 </section>
 {% endblock %}
