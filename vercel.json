@@ -1,5 +1,5 @@
 {
-  "buildCommand": "python3 manage.py migrate && mkdir -p public/static && cp -r static/* public/static/ 2>/dev/null || true",
+  "buildCommand": "python3 manage.py migrate && python3 manage.py collectstatic --noinput",
   "env": {
     "DEBUG": "False",
     "ALLOWED_HOSTS": "sai-shritha-pamula-courture-portfol.vercel.app,.vercel.app"
