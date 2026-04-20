@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Sai Shritha Pamula Couture{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}Sai Shritha Pamula Couture — where every stitch tells a story. Thoughtful, expressive, and poetic fashion design.{% endblock %}">
+    
+    <!-- Favicon (Silences the 404 error) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>S</text></svg>">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +18,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
-    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}?v=1.2">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}?v=1.2">
     {% block page_css %}{% endblock %}
 </head>
 <body>

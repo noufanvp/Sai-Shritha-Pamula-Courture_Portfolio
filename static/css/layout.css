@@ -21,7 +21,13 @@
   justify-content: space-between;
   gap: 1rem;
   transition: background var(--duration-fast) ease,
-              padding var(--duration-fast) ease;
+              padding var(--duration-fast) ease,
+              transform var(--duration-fast) ease;
+}
+
+.site-header.hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .site-header.scrolled {

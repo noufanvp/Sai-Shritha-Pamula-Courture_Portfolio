@@ -12,7 +12,7 @@
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 1.2s var(--ease-out-expo),
-              transform 1.4s var(--ease-out-expo);
+    transform 1.4s var(--ease-out-expo);
   will-change: opacity, transform;
 }
 
@@ -47,7 +47,7 @@
   opacity: 0;
   transform: translateY(15px);
   transition: opacity 0.5s var(--ease-out-expo),
-              transform 0.5s var(--ease-out-expo);
+    transform 0.5s var(--ease-out-expo);
 }
 
 .char-reveal.is-visible .char {
@@ -57,8 +57,13 @@
 
 /* Parallax image slow scale-in */
 @keyframes slowZoom {
-  0% { transform: scale(1.12); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 
@@ -103,13 +108,11 @@
       rgba(6, 13, 26, 0.2) 30%,
       rgba(6, 13, 26, 0.15) 50%,
       rgba(6, 13, 26, 0.7) 85%,
-      rgba(6, 13, 26, 0.95) 100%
-    ),
+      rgba(6, 13, 26, 0.95) 100%),
     linear-gradient(90deg,
       rgba(6, 13, 26, 0.6) 0%,
       transparent 50%,
-      rgba(6, 13, 26, 0.3) 100%
-    );
+      rgba(6, 13, 26, 0.3) 100%);
 }
 
 /* Film grain texture */
@@ -157,7 +160,7 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 1s var(--ease-out-expo) 0.8s,
-              opacity 0.5s ease 0.8s;
+    opacity 0.5s ease 0.8s;
 }
 
 .hero__title.is-visible em::after,
@@ -222,8 +225,13 @@
 }
 
 @keyframes scroll-drop {
-  0% { top: -100%; }
-  100% { top: 200%; }
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 200%;
+  }
 }
 
 
@@ -310,12 +318,10 @@
 .design-card__image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 40%,
-    rgba(6, 13, 26, 0.7) 85%,
-    rgba(6, 13, 26, 0.9) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 40%,
+      rgba(6, 13, 26, 0.7) 85%,
+      rgba(6, 13, 26, 0.9) 100%);
   transition: opacity var(--duration-medium) ease;
 }
 
@@ -476,7 +482,7 @@
   margin: var(--space-md) auto 0;
 }
 
-.full-story__cta  {
+.full-story__cta {
   text-align: center;
 }
 
@@ -537,7 +543,7 @@
   position: relative;
   border: 1px solid transparent;
   transition: border-color var(--duration-medium) var(--ease-out-quart),
-              background var(--duration-medium) var(--ease-out-quart);
+    background var(--duration-medium) var(--ease-out-quart);
 }
 
 .order-step:hover {

@@ -1,8 +1,199 @@
 {% extends 'base_layout.html' %}
+{% load static %}
+
+{% block title %}About SSP — The Story Behind Every Stitch{% endblock %}
+{% block meta_description %}Discover how a single failed lehenga became a philosophy. SSP Couture: where intention meets
+creation.{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/pages/about.css' %}?v=1.3">
+{% endblock %}
 
 {% block content %}
-<section class="about">
-    <h2 class="about-title">About SSP Portfolio</h2>
-    <p class="about-description">Learn more about our brand and mission.</p>
-</section>
+
+<div class="about-page">
+
+  <!-- ═══════════════════════════════════════
+       SCROLL-HERO: Immersive Frame Sequence
+       ═══════════════════════════════════════ -->
+  <section class="scroll-hero" id="catalyst">
+    <div class="scroll-hero__track">
+      <div class="scroll-hero__sticky">
+
+        <!-- Image Sequence Canvas -->
+        <canvas class="scroll-hero__canvas" id="hero-canvas"></canvas>
+        <div class="scroll-hero__canvas-loader" id="hero-loader">
+          <span>Loading Experience...</span>
+          <div class="loading-bar">
+            <div class="loading-fill" id="hero-loading-fill"></div>
+          </div>
+        </div>
+
+        <!-- Overlay for text contrast -->
+        <div class="scroll-hero__overlay"></div>
+
+        <!-- Captions: one per frame -->
+        <div class="scroll-hero__captions" id="hero-captions">
+          <div class="scroll-hero__caption is-active" data-caption="0">
+            <span class="caption-label">[ 01 — The Catalyst ]</span>
+            <h1 class="caption-title">It didn't start<br>with a <em>plan</em></h1>
+          </div>
+          <div class="scroll-hero__caption" data-caption="1">
+            <p class="caption-body">A lehenga that didn't feel like <em>me</em>.<br>A vision so clear it felt like a
+              memory.</p>
+          </div>
+          <div class="scroll-hero__caption" data-caption="2">
+            <p class="caption-body">Instead of settling,<br>I decided to take the <em>needle</em><br>into my own hands.
+            </p>
+          </div>
+          <div class="scroll-hero__caption" data-caption="3">
+            <p class="caption-body">Every stitch became<br>an act of <em>intention</em>.</p>
+          </div>
+          <div class="scroll-hero__caption" data-caption="4">
+            <p class="caption-body">Details. Storytelling.<br>How a piece <em>feels</em> —<br>not just how it looks.</p>
+          </div>
+          <div class="scroll-hero__caption" data-caption="5">
+            <h2 class="caption-title caption-title--end">That moment of<br><em>imperfection</em><br>became my
+              permission<br>to create.</h2>
+          </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="scroll-hero__progress">
+          <div class="scroll-hero__progress-fill" id="hero-progress"></div>
+        </div>
+
+        <!-- Scroll cue -->
+        <div class="scroll-hero__cue" id="hero-cue">
+          <span>Scroll to unfold</span>
+          <div class="scroll-hero__cue-line"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CHAPTER 02 — THE TURNING POINT
+       ═══════════════════════════════════════ -->
+  <section class="chapter" id="turning-point">
+    <div class="chapter__inner">
+      <span class="chapter__num">02</span>
+      <div class="chapter__text">
+        <h2 class="chapter__title" data-reveal="heading">The Turning Point</h2>
+        <p class="chapter__sub" data-reveal="subheading">NIT Calicut became my canvas.</p>
+        <p class="chapter__body" data-reveal="body">
+          Surrounded by the creative pulse of a culturally rich campus, I stopped seeing clothes and started seeing
+          <em>silhouettes of emotion</em>. Every fabric whispered a story. Every drape carried intention. The campus
+          didn't just teach me design — it taught me that fashion is a language, and I was finally fluent.
+        </p>
+        <p class="chapter__aside" data-reveal="cta">
+          In that environment, design became less about looking good and more about feeling true.
+        </p>
+      </div>
+      <div class="chapter__image" data-reveal="image">
+        <img src="{% static 'images/about-us/frame-03.png' %}"
+          alt="Hands touching velvet fabric — the moment of taking control" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CHAPTER 03 — THE PHILOSOPHY
+       ═══════════════════════════════════════ -->
+  <section class="chapter chapter--reverse" id="philosophy">
+    <div class="chapter__inner">
+      <span class="chapter__num">03</span>
+      <div class="chapter__text">
+        <h2 class="chapter__title" data-reveal="heading">The Philosophy</h2>
+        <p class="chapter__sub" data-reveal="subheading">One stitch at a time, building meaning.</p>
+        <p class="chapter__body" data-reveal="body">
+          I reject the noise of mass production. Every garment I create is not an item — it's a <em>poem without
+            words</em>. The philosophy is simple: intention over volume. Each piece carries a mood, a moment, a reason
+          for existing. Mass production is about filling shelves. What I'm building is about filling stories.
+        </p>
+        <p class="chapter__aside" data-reveal="cta">
+          In a world of fast fashion, slowness becomes a luxury. Intention becomes love.
+        </p>
+      </div>
+      <div class="chapter__image" data-reveal="image">
+        <img src="{% static 'images/about-us/frame-04.png' %}"
+          alt="Gold embroidery on velvet — the act of intentional creation" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CHAPTER 04 — THE EVOLUTION
+       ═══════════════════════════════════════ -->
+  <section class="chapter" id="evolution">
+    <div class="chapter__inner">
+      <span class="chapter__num">04</span>
+      <div class="chapter__text">
+        <h2 class="chapter__title" data-reveal="heading">The Evolution</h2>
+        <p class="chapter__sub" data-reveal="subheading">Day One of something beautiful.</p>
+        <p class="chapter__body" data-reveal="body">
+          I am right here — at the beginning. Exploring. Experimenting. Learning through the process, one piece at a
+          time. There's beauty in uncertainty, in the messy middle of creation. Every design is a question I'm asking
+          myself about intention, about craft, about what it means to create something that matters.
+        </p>
+        <p class="chapter__aside" data-reveal="cta">
+          This is not the story of arrival. This is the story of becoming.
+        </p>
+      </div>
+      <div class="chapter__image" data-reveal="image">
+        <img src="{% static 'images/about-us/frame-05.png' %}"
+          alt="Half-completed zardozi embroidery — the journey midway" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CHAPTER 05 — THE VISION
+       ═══════════════════════════════════════ -->
+  <section class="chapter chapter--reverse" id="vision">
+    <div class="chapter__inner">
+      <span class="chapter__num">05</span>
+      <div class="chapter__text">
+        <h2 class="chapter__title" data-reveal="heading">The Vision</h2>
+        <p class="chapter__sub" data-reveal="subheading">Where every stitch tells a story.</p>
+        <p class="chapter__body" data-reveal="body">
+          I want to build something <em>thoughtful, expressive, and poetic</em>. A brand where each piece feels like it
+          belongs to a story, not just a collection. Where the person wearing it understands that they're not just
+          wearing fabric — they're wearing intention. They're wearing a moment. They're wearing a poem.
+        </p>
+        <p class="chapter__aside" data-reveal="cta">
+          SSP Couture is where fashion becomes a language, and every stitch is a word in that language.
+        </p>
+      </div>
+      <div class="chapter__image" data-reveal="image">
+        <img src="{% static 'images/about-us/frame-06.png' %}"
+          alt="Completed gold embroidery masterpiece — the realized vision" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       CTA — CLOSING
+       ═══════════════════════════════════════ -->
+  <section class="about-cta" id="about-cta">
+    <div class="about-cta__inner">
+      <span class="caption-label" data-reveal="heading">[ What's Next ]</span>
+      <h2 class="about-cta__title" data-reveal="subheading">Ready to explore<br>the collection?</h2>
+      <p class="about-cta__sub" data-reveal="body">Each piece is a chapter. Let's begin.</p>
+      <a href="{% url 'designs' %}" class="btn btn-accent" data-reveal="cta">View Designs</a>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{% static 'js/about2.js' %}"></script>
 {% endblock %}
