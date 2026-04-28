@@ -57,7 +57,7 @@
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, centerShift_x, centerShift_y, img.naturalWidth * ratio, img.naturalHeight * ratio);
     }
 
-    const currentFrame = (idx) => `/static/images/about-us/about-frames/frame_${String(idx).padStart(4, '0')}.png`;
+    const currentFrame = (idx) => `/static/images/about-us/about-frames/frame_${String(idx).padStart(4, '0')}.webp`;
 
     // Preload all 240 frames efficiently
     for (let i = 1; i <= frameCount; i++) {
